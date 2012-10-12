@@ -5,12 +5,13 @@
 clean:
 	dh_testdir
 	dh_testroot
-	find . -maxdepth 1 -not -iname "debian" -not -iname "*.zip" -not -name ".*" -exec rm -r '{}' \;
+	#find . -maxdepth 1 -not -iname "debian" -not -iname "*.zip" -not -name ".*" -exec rm -r '{}' \;
+	rm -fr azenis-theme
 	dh_clean
 
 extract: extract-stamp
 extract-stamp:
-	unzip $(CURDIR)/../sources/xtheme-azenis-0.5.zip
+	unzip /usr/share/omv-extra-sources/sources/xtheme-azenis-0.5.zip 
 	touch extract-stamp
 
 configure: configure-stamp
